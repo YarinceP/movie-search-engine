@@ -2,12 +2,18 @@
   <v-container>
       <v-row>
           <v-col
-          v-for="n in 3"
-          :key="n"
+          v-for="movie in movies.results"
+          :key="movie.id"
           cols="12"
+          md="6"
+          lg="4"
           sm="4"
           >
-
+          <MovieCard
+          :title="movie.title"
+          :posterPath="movie.poster_path" 
+          >
+          </MovieCard>
           </v-col>
       </v-row>
   </v-container>
@@ -15,20 +21,21 @@
 
 <script>
 import MovieCard from '@/components/MovieCard.vue'
+import {mapActions, mapState} from 'vuex'
 import api from '@/api'
 export default {
     name: 'MovieList',
-    data() {
-        return {
-            movies:null
-        }
+    components:{
+        MovieCard
     },
     methods: {
-        api:getMovies('a',1)
-        .then(console.log(response)
-        )
-        
-        
+        ...mapActions(['getMoviesList'])  
+    },
+    computed:{
+        ...mapState(['movies'])
+    },
+    mounted(){
+       this.getMoviesList()
     },
 }
 </script>
