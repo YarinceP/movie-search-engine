@@ -2,9 +2,6 @@
   <v-form>
     <v-container>
       <v-row>
-        <h1 >Search your favorite movie</h1>
-      </v-row>
-      <v-row>
         <v-col cols="10">
           <v-text-field v-model="searchbox.query" placeholder="Cinema Master" color="teal"  filled shaped clearable />
         </v-col>
