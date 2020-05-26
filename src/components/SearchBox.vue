@@ -6,10 +6,10 @@
       </v-row>
       <v-row>
         <v-col cols="10">
-          <v-text-field label="Cinema" placeholder="Example" outlined />
+          <v-text-field v-model="searchbox.query" placeholder="Cinema Master" color="teal"  filled shaped clearable />
         </v-col>
         <v-col cols="2">
-          <v-btn color="warning" large rounded>Search</v-btn>
+          <v-btn @click="showQuery(searchbox.query)" color="warning" x-large rounded>Search</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -17,8 +17,16 @@
 </template>
 
 <script>
+import {mapState, mapMutations} from 'vuex'
+
 export default {
-    name: 'SearchBox'
+    name: 'SearchBox',
+    computed:{
+      ...mapState(['searchbox'])
+    },
+    methods:{
+      ...mapMutations(['showQuery'])
+    }
 }
 </script>
 
