@@ -1,7 +1,7 @@
 <template>
   <v-hover v-slot:default="{ hover }">
     <v-card :elevation="hover ? 21 : 2" width="300" shaped>
-      <v-img :src="posterComp" width="300" height="450">
+      <v-img :src="posterComp" width="300" height="450" :eager="true" :alt="title">
       </v-img>
       <v-card-text class="teal white--text center--text">{{title}}</v-card-text>
     </v-card>
