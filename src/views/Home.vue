@@ -3,6 +3,7 @@
     <TitlePage title="Busca tu película favorita"></TitlePage>
     <SearchBox></SearchBox>
     <MovieList></MovieList>
+    <Pagination></Pagination>
   </v-container>
 </template>
 
@@ -11,12 +12,14 @@
 import SearchBox from "@/components/SearchBox.vue";
 import MovieList from "@/components/MovieList.vue";
 import TitlePage from "@/components/TitlePage.vue";
+import Pagination from "@/components/Pagination.vue";
 export default {
   name: "Home",
   components: {
     SearchBox,
     MovieList,
-    TitlePage
+    TitlePage,
+    Pagination,
   }
 };
 </script>
