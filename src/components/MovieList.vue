@@ -17,17 +17,8 @@ export default {
   components: {
     MovieCard
   },
-  methods: {
-    ...mapActions(["getMoviesList"])
-  },
   computed: {
     ...mapState(["movies"])
   },
-  mounted() {
-    this.getMoviesList();
-  }
 };
 </script>
-
-<style>
-</style>
