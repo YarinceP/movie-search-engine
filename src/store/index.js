@@ -22,8 +22,8 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async getMoviesList(context){
-      let movies = await api.getMovies('a',1)
+    async getMoviesList(context,query){
+      let movies = await api.getMovies(query,1)
          console.log(movies)
       context.commit('loadMovies',movies)
     },
