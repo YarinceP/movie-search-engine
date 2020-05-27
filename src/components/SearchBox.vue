@@ -6,7 +6,7 @@
           <v-text-field v-model="searchbox.query" placeholder="Cinema Master" color="teal"  filled shaped clearable />
         </v-col>
         <v-col cols="2">
-          <v-btn @click="getMoviesList(searchbox.query)" color="warning" x-large rounded>Search</v-btn>
+          <v-btn @click="searchMovie(searchbox.query)" color="warning" x-large rounded>Search</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -23,7 +23,11 @@ export default {
     },
     methods:{
       ...mapMutations(['showQuery']),
-      ...mapActions(['getMoviesList'])
+      ...mapActions(['getMoviesList']),
+      searchMovie(query){
+        this.showQuery(query)
+        this.getMoviesList(this.searchbox.query)
+      }
     }
 }
 </script>
