@@ -13,6 +13,7 @@ import SearchBox from "@/components/SearchBox.vue";
 import MovieList from "@/components/MovieList.vue";
 import TitlePage from "@/components/TitlePage.vue";
 import Pagination from "@/components/Pagination.vue";
+import {mapState} from "vuex";
 export default {
   name: "Home",
   components: {
@@ -20,6 +21,12 @@ export default {
     MovieList,
     TitlePage,
     Pagination,
+  },
+  computed:{
+    ...mapState(['movie'])
+  },
+  mounted() {
+    this.movie = null
   }
 };
 </script>
