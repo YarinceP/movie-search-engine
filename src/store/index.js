@@ -11,7 +11,18 @@ export default new Vuex.Store({
       page:   1,
       total_pages: null,
     },
-    movies:[]
+    movies:[],
+    movie:{
+      id: '',
+      title: '',
+      genres: '',
+      overview: '',
+      posterPath: '',
+      voteAverage: '',
+      voteCount: '',
+      budget: 0,
+      homepage:'',
+    }
 
   },
   mutations: {
@@ -26,6 +37,18 @@ export default new Vuex.Store({
     },
     resetData(state){
       state.movies = []
+    },
+    loadMovie(state,movie){
+      state.movie.id = movie.id
+      state.movie.title = movie.title
+      state.movie.genres = movie.genres
+      state.movie.overview = movie.overview
+      state.movie.posterPath = movie.poster_path
+      state.movie.voteAverage = movie.vote_average
+      state.movie.voteCount = movie.vote_count
+      state.movie.budget = movie.budget
+      state.movie.homepage = movie.homepage
+
     }
   },
   actions: {
@@ -35,6 +58,12 @@ export default new Vuex.Store({
          console.log(context.state.searchbox.page);
       context.commit('loadMovies',movies)
     },
+    async getMovie(context,id){
+      let movie = await api.getMovieById(id)
+      console.log(movie)
+
+      context.commit('loadMovie',movie)
+    }
   },
   modules: {
   }
