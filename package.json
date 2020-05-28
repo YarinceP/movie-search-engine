@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
@@ -22,6 +23,9 @@
     "@vue/cli-plugin-vuex": "~4.3.0",
     "@vue/cli-service": "~4.3.0",
     "axios": "^0.19.2",
+    "chalk": "^4.0.0",
+    "execa": "^4.0.0",
+    "node-emoji": "^1.10.0",
     "vue-cli-plugin-gh-pages-auto-deploy": "^0.3.0",
     "vue-cli-plugin-vuetify": "^2.0.5",
     "vue-template-compiler": "^2.6.11"
