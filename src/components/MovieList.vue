@@ -5,7 +5,7 @@
             :title="movies.length === 0 ? '' : 'Se encontraron ' + formatNumber + ' resultados'"></SubTitlePage>
     <v-row>
       <v-col v-for="movie in movies.results" :key="movie.id" cols="12" md="6" lg="4" sm="4">
-        <MovieCard :title="movie.title" :posterPath="movie.poster_path"></MovieCard>
+        <MovieCard :title="movie.title" :posterPath="movie.poster_path" :id="movie.id"></MovieCard>
       </v-col>
     </v-row>
   </v-container>
