@@ -1,10 +1,12 @@
 <template>
   <v-hover v-slot:default="{ hover }">
+    <v-tab :to="{ name: 'Movie', params: { id: id }}">
     <v-card :elevation="hover ? 21 : 2" width="300" shaped>
       <v-img :src="posterComp" width="300" height="450" :eager="true" :alt="title">
       </v-img>
       <v-card-text class="teal white--text center--text">{{title}}</v-card-text>
     </v-card>
+    </v-tab>
   </v-hover>
 </template>
 
@@ -14,6 +16,6 @@ import posterMixin from "@/api/poster.js";
 export default {
   name: "movie-card",
   mixins: [posterMixin],
-  props: ["title", "posterPath"]
+  props: ["title", "posterPath","id"]
 };
 </script>
